@@ -27,7 +27,7 @@ class Stopwatch extends Component{
 		}));
 
 		if (!this.state.isRunning) {
-			this.setState()
+			this.setState({ previousTime: Date.now() });
 		}
 	} 
 
@@ -38,12 +38,12 @@ class Stopwatch extends Component{
 	} 
 
 	render(){
-		const time = Math.floor(this.state.elapsedTime / 1000);
+		const seconds = Math.floor(this.state.elapsedTime / 1000);
 		return(
 			<div className="stopwatch">
 				<h2>Stopwatch</h2>
 				<span className="stopwatch-time">
-					{time}
+					{seconds}
 				</span>
 				<button onClick={this.handleStopwatch}>
 					{this.state.isRunning ? 'Stop' : 'Start'}
