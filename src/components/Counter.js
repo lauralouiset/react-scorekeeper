@@ -15,7 +15,7 @@ class Counter extends PureComponent {
 		}
 	}
 
-Counter.PropTypes = {
+Counter.propTypes = {
 	index: PropTypes.number,
 	score: PropTypes.number,
 	changeScore: PropTypes.func

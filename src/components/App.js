@@ -62,30 +62,40 @@ class App extends Component {
       };
     });
 	};
+
+	getHighScore = () => {
+		const scores = this.state.players.map(p => p.score);
+		const highScore = Math.max(...scores);
+		if (highScore) {
+			return highScore;
+		}
+		return null;
+	}
+
 	
 
   render() {
-    return (
-      <div className="scoreboard">
+
+		const highScore = this.getHighScore();
+
+    return <div className="scoreboard">
         <Header title="Scoreboard" players={this.state.players} />
 
         {/* Players list */}
-        {this.state.players.map( (player, index) => (
+        {this.state.players.map((player, index) => (
           <Player
             name={player.name}
             score={player.score}
             id={player.id}
-						index = {index}
+            index={index}
             key={player.id.toString()}
             removePlayer={this.handleRemovePlayer}
-						changeScore={this.handleScoreChange}
+            changeScore={this.handleScoreChange}
+            isHighScore={highScore === player.score}
           />
         ))}
-				<AddPlayerForm 
-					addPlayer={this.handleAddPlayer}
-				/>
-      </div>
-    );
+        <AddPlayerForm addPlayer={this.handleAddPlayer} />
+      </div>;
   }
 }
 
