@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 const Stats = (props) => {
 
@@ -23,5 +24,9 @@ const Stats = (props) => {
 		</table>
 	)
 } 
+
+Stats.PropTypes = {
+	players : PropTypes.arrayOf(PropTypes.object)
+}
 
 export default Stats;

@@ -2,29 +2,29 @@ import React, {Component} from 'react';
 
 import Header from './Header';
 import Player from './Player';
-import AddPlayerForm from './AddPlayerForm';
+import AddPlayerForm from './AddPlayerFormRef';
 
 
 class App extends Component {
   state = {
     players: [
       {
-        name: "Guil",
+        name: "Garfield",
         score: 0,
         id: 1
       },
       {
-        name: "Treasure",
+        name: "Nermal",
         score: 0,
         id: 2
       },
       {
-        name: "Ashley",
+        name: "Odie",
         score: 0,
         id: 3
       },
       {
-        name: "James",
+        name: "Jon",
         score: 0,
         id: 4
       }
